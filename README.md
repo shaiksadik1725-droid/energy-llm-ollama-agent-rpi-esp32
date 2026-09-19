@@ -9,6 +9,7 @@
   <img src="https://img.shields.io/badge/Ollama-Local_LLM-000000" />
   <img src="https://img.shields.io/badge/Raspberry_Pi-Edge_AI-C51A4A?logo=raspberrypi&logoColor=white" />
   <img src="https://img.shields.io/badge/ESP32-IoT-00979D" />
+  <a href="https://github.com/shaiksadik1725-droid/energy-llm-ollama-agent-rpi-esp32/actions/workflows/python-syntax.yml"><img src="https://github.com/shaiksadik1725-droid/energy-llm-ollama-agent-rpi-esp32/actions/workflows/python-syntax.yml/badge.svg" alt="Python syntax check" /></a>
 </p>
 
 ## Project at a Glance
