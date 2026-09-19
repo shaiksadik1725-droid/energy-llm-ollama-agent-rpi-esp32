@@ -1,68 +1,108 @@
 # Local LLM Energy Monitoring Agent — Raspberry Pi + ESP32
 
-An edge-AI energy monitoring project that combines electrical measurements, a local dashboard, and a locally hosted LLM agent.
+<p align="center">
+  <strong>Edge AI + local LLM reasoning for electrical energy monitoring</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Ollama-Local_LLM-000000" />
+  <img src="https://img.shields.io/badge/Raspberry_Pi-Edge_AI-C51A4A?logo=raspberrypi&logoColor=white" />
+  <img src="https://img.shields.io/badge/ESP32-IoT-00979D" />
+</p>
+
+## Project at a Glance
+
+| Item | Details |
+|---|---|
+| Domain | Edge AI / energy monitoring |
+| Compute | Raspberry Pi + ESP32-oriented architecture |
+| AI approach | Local LLM / Ollama-assisted interpretation |
+| Interface | Browser dashboard |
+| Communication | Serial / local networking workflow |
+| Status | Academic engineering prototype |
 
 ## Overview
 
-The project is designed around a Raspberry Pi / ESP32 architecture where electrical measurements can be monitored and interpreted locally. The Python agent processes measurements and provides human-readable status information, while the dashboard presents the system state in a browser.
+This project combines electrical measurements, a local Python monitoring agent, and a browser dashboard. The design is intended for edge deployment where measurements can be interpreted locally instead of depending entirely on cloud AI services.
+
+## System Architecture
+
+```mermaid
+flowchart LR
+    A[Electrical Sensors] --> B[ESP32]
+    B --> C[Raspberry Pi]
+    C --> D[Measurement Processing]
+    D --> E[Rule / Trend Analysis]
+    E --> F[Local LLM via Ollama]
+    D --> G[Web Dashboard]
+    F --> G
+    F --> H[Human-Readable Explanation]
+```
 
 ## Main Features
 
-- Local energy-monitoring workflow
-- Electrical parameter analysis
+- Local electrical monitoring workflow
+- Voltage/current/power-oriented analysis
 - Browser dashboard
-- Python-based monitoring agent
-- Designed for Raspberry Pi + ESP32 integration
-- Local LLM / Ollama-oriented architecture
-- Warning and status generation from changing electrical values
+- Python monitoring agent
+- Local LLM integration concept
+- Warning and status generation
+- Edge-oriented architecture
 
 ## Technology Stack
 
 - Python
+- Flask
+- Flask-SocketIO
+- Eventlet
+- Requests
+- PySerial
 - HTML / CSS / JavaScript
-- Ollama / local LLM workflow
+- Ollama
 - Raspberry Pi
 - ESP32
 
-## Project Structure
+## Repository Structure
 
 ```text
 energy-llm-ollama-agent-rpi-esp32/
 ├── ollama_agent.py
-└── dashboard.html
+├── dashboard.html
+├── requirements.txt
+└── .gitignore
 ```
 
-## System Concept
+## Setup
 
-```text
-Sensors / ESP32
-      │
-      ▼
-Raspberry Pi
-      │
-      ├── Measurement processing
-      ├── Local monitoring logic
-      ├── LLM-assisted interpretation
-      │
-      ▼
-Web Dashboard
+```bash
+git clone https://github.com/shaiksadik1725-droid/energy-llm-ollama-agent-rpi-esp32.git
+cd energy-llm-ollama-agent-rpi-esp32
+pip install -r requirements.txt
 ```
+
+Configure the local serial/network settings and Ollama endpoint used by the project, then run the Python agent.
 
 ## Why Local AI?
 
-A local model can reduce dependence on cloud services and can keep the monitoring workflow closer to the edge device. This is useful for experiments involving privacy, offline operation, and low-latency automation.
+Local inference can reduce cloud dependence, support offline-oriented experiments, reduce data exposure, and enable lower-latency control or monitoring workflows.
 
-## Future Improvements
+## Engineering Considerations
 
-- Add MQTT communication between ESP32 and Raspberry Pi
-- Add persistent historical storage
-- Add charts for voltage, current, power, frequency, and power factor
-- Add alert acknowledgement and event logs
-- Add model/tool-call safety boundaries for device control
-- Add Docker-based deployment
+Any AI-generated recommendation should remain separated from safety-critical electrical control. Device-control actions should use deterministic limits and explicit fail-safe logic.
+
+## Future Work
+
+- MQTT between ESP32 and Raspberry Pi
+- Historical data storage
+- Time-series charts
+- Alert acknowledgement and audit logs
+- Containerized deployment
+- Stronger device-control safety boundaries
+- Automated tests
 
 ## Author
 
 **Sadik Shaik**
 
-Computer Engineering / AI & Embedded Systems Projects
+Computer Engineering · Edge AI · Embedded Systems
