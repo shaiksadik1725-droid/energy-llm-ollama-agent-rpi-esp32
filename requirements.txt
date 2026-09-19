@@ -1,0 +1,5 @@
+eventlet
+pyserial
+requests
+Flask
+Flask-SocketIO
